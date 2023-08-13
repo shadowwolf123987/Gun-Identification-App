@@ -1,0 +1,51 @@
+﻿<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div style="text-align:center">
+    
+    <select id="guns" class="dd" style="height:40px;width:200px">
+        <option value="handguns">Handguns</option>
+    </select>
+
+</div>
+
+<div style="text-align:center">
+    <button type="button" class="btn" style="height:80px;width:200px" onclick="sendView()">View Guns</button>
+</div>
+
+<div style="text-align:center">
+    <button type="submit" class="btn" style="height:80px;width:200px" onclick="send('quiz')">Guns Quiz</button>
+</div>
+
+<script>
+
+    function sendView() {
+        var gun = document.getElementById("guns").value
+
+        $.ajax({
+            url: "/Main/GunView",
+            type: "GET",
+            data: {
+                gun: gun
+            },
+            success: function (data) {
+                window.location.href = "/Main/GunView"
+            },
+        });
+    }
+
+    function sendQuiz() {
+        var gun = document.getElementById("guns").value
+
+        $.ajax({
+            url: "/Main/GunQuiz",
+            type: "GET",
+            data: {
+                gun: gun
+            },
+            success: function (data) {
+                window.location.href = "/Main/GunQuiz"
+            },
+        });
+    }
+
+</script>

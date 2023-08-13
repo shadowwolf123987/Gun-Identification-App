@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Azure.Core;
+@using System;
+@using System.Web;
+    
+<!DOCTYPE html>
+<html lang="en">
+@{
+    string name = (string)ViewBag.name;
+    string image = (string)ViewBag.image;
+
+    Console.WriteLine(image);
+    Console.WriteLine(name);
+}
+<body>
+    <div>
+        <img src="@image">
+        <h1>@name</h1>
+        <h1>TEST</h1>
+    </div>
+</body>
+</html>
+
