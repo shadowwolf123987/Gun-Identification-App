@@ -35,3 +35,26 @@ body {
     border-radius: 5px;
     margin: 1%;
 }
+
+.viewName {
+    padding: 2%;
+}
+
+.viewImg {
+    width: 300px;
+    border-radius: 7px;
+}
+
+.viewDiv {
+    padding-top: 3%;
+    text-align: center
+}
+
+.viewBtn {
+    background-color: #605A5A;
+    border-radius: 12px;
+    border-color: #6A6363;
+    color: white;
+    padding: 12px 38px;
+    font-size: 24px;
+}

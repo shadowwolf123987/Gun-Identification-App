@@ -20,7 +20,6 @@
 
     function sendView() {
         var gun = document.getElementById("guns").value
-
         $.ajax({
             url: "/Main/GunView",
             type: "GET",
@@ -28,7 +27,7 @@
                 gun: gun
             },
             success: function (data) {
-                window.location.href = "/Main/GunView"
+                window.location.href = "/Main/GunView?gun=" + gun
             },
         });
     }
@@ -43,7 +42,7 @@
                 gun: gun
             },
             success: function (data) {
-                window.location.href = "/Main/GunQuiz"
+                window.location.href = "/Main/GunQuiz?gun=" + gun
             },
         });
     }

@@ -2,22 +2,26 @@
 @using Azure.Core;
 @using System;
 @using System.Web;
-    
+
 <!DOCTYPE html>
 <html lang="en">
 @{
     string name = (string)ViewBag.name;
     string image = (string)ViewBag.image;
-
-    Console.WriteLine(image);
-    Console.WriteLine(name);
 }
 <body>
-    <div>
-        <img src="@image">
-        <h1>@name</h1>
-        <h1>TEST</h1>
+    <div class="viewDiv">
+        <img class="viewImg" src="@image">
+        <h1 class="viewName">@name</h1>
+        <button class="viewBtn" onclick="refresh()">Next</button>
     </div>
 </body>
 </html>
 
+<script>
+
+    function refresh() {
+        window.location.reload()
+    }
+
+</script>
