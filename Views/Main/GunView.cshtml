@@ -10,10 +10,10 @@
     string image = (string)ViewBag.image;
 }
 <body>
-    <div class="viewDiv">
-        <img class="viewImg" src="@image">
-        <h1 class="viewName">@name</h1>
-        <button class="viewBtn" onclick="refresh()">Next</button>
+    <div class="gunDiv">
+        <img class="viewImg" src="@image" alt=@name>
+        <h1 class="viewName notranslate">@name</h1>
+        <button class="gunBtn" onclick="refresh()">Next</button>
     </div>
 </body>
 </html>

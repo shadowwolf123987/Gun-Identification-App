@@ -1,1 +1,66 @@
-﻿
+﻿@using Microsoft.AspNetCore.Http
+@using Azure.Core;
+@using System;
+@using System.Web;
+
+<!DOCTYPE html>
+<html lang="en">
+@{
+    string name = (string)ViewBag.name;
+    string image = (string)ViewBag.image;
+
+    name = name.Trim();
+}
+<body>
+    <div class="gunDiv">
+        <img class="gunImg" src="@image">
+    </div>
+    <div class="gunDiv">
+        <input class="quizInput">
+    </div>
+    <div class="gunDiv" style="padding-top: 30px;">
+        <button class="gunBtn" onclick="checkAnswer()">Submit</button>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function refresh() {
+        window.location.reload();
+    }
+
+    function checkAnswer() {
+        var input = document.getElementsByClassName("quizInput")[0].value
+        var button = document.getElementsByClassName("gunBtn")[0]
+
+        if (input == @name) {
+            var corrPara = document.createElement('div');
+            var corrTxt = document.createTextNode("Correct Name Given");
+            corrPara.appendChild(corrTxt)
+            corrPara.setAttribute("class", "correct")
+            document.getElementsByTagName('body')[0].appendChild(corrPara);
+
+            button.innerHTML = "Next"
+            button.setAttribute("onclick", "refresh()");
+        }
+
+        else {
+            var incorrDiv = document.createElement('div');
+            var corrAnsDiv = document.createElement('div');
+            var incorrTxt = document.createTextNode("Incorrect Name Given");
+            var corrAns = document.createTextNode("Correct name is "+"@name");
+            incorrDiv.appendChild(incorrTxt)
+            corrAnsDiv.appendChild(corrAns)
+            incorrDiv.setAttribute("class", "incorrect")
+            corrAnsDiv.setAttribute("class", "incorrect")
+            document.getElementsByTagName('body')[0].appendChild(incorrDiv);
+            document.getElementsByTagName('body')[0].appendChild(corrAnsDiv);
+
+            button.innerHTML = "Next"
+            button.setAttribute("onclick", "refresh()");
+        }
+
+    }
+
+</script>

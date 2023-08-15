@@ -4,6 +4,10 @@
     
     <select id="guns" class="dd" style="height:40px;width:200px">
         <option value="handguns">Handguns</option>
+        <option value="rifles">Assault Rifles</option>
+        <option value="snipers">Sniper Rifles</option>
+        <option value="machine guns">Machine Guns</option>
+        <option value="shotguns">Shotguns</option>
     </select>
 
 </div>
@@ -13,7 +17,7 @@
 </div>
 
 <div style="text-align:center">
-    <button type="submit" class="btn" style="height:80px;width:200px" onclick="send('quiz')">Guns Quiz</button>
+    <button type="button" class="btn" style="height:80px;width:200px" onclick="sendQuiz()">Guns Quiz</button>
 </div>
 
 <script>
@@ -34,7 +38,6 @@
 
     function sendQuiz() {
         var gun = document.getElementById("guns").value
-
         $.ajax({
             url: "/Main/GunQuiz",
             type: "GET",

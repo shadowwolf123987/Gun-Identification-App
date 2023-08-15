@@ -36,25 +36,44 @@ body {
     margin: 1%;
 }
 
-.viewName {
-    padding: 2%;
-}
-
-.viewImg {
-    width: 300px;
+.gunImg {
+    width: 350px;
     border-radius: 7px;
 }
 
-.viewDiv {
-    padding-top: 3%;
-    text-align: center
-}
-
-.viewBtn {
+.gunBtn {
     background-color: #605A5A;
     border-radius: 12px;
     border-color: #6A6363;
     color: white;
     padding: 12px 38px;
     font-size: 24px;
+}
+
+.gunDiv {
+    text-align: center;
+    padding: 5px;
+}
+
+.viewName {
+    padding: 2%;
+}
+
+.quizInput {
+    border-radius: 6px;
+    outline: none;
+    width: 275px;
+    height: 30px;
+}
+
+.correct{
+    text-align:center;
+    color: green;
+    font-size: 22px;
+}
+
+.incorrect {
+    text-align: center;
+    color: red;
+    font-size: 22px;
 }
