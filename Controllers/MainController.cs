@@ -65,6 +65,7 @@ namespace Gun_Identification_App.Controllers
                             where z.Id == randId
                             select z.Image).FirstOrDefault().ToString();
 
+                
                 ViewBag.image = image;
                 ViewBag.name = name;
             }
@@ -323,8 +324,11 @@ namespace Gun_Identification_App.Controllers
                              where z.Id == randId
                              select z.Image).FirstOrDefault().ToString();
 
+                List<string> guns = _context.Handguns.Select(x => x.Name).ToList();
+
                 ViewBag.image = image;
                 ViewBag.name = name;
+                ViewBag.guns = guns;
             }
 
             if (gun == "rifles")
